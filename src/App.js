@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route path="/" element={<Home movies={movies}/>}></Route>
-          <Route path='/Trailer/ :ytTrailerId' element={<Trailer/>}></Route>
+          <Route path='/Trailer/:ytTrailerId' element={<Trailer/>}></Route>
 
           </Route>
       </Routes>

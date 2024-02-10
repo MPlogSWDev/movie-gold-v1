@@ -24,11 +24,19 @@ const Hero = ({movies}) => {
                                         <div className='movie-title'>
                                             <h4>{movie.title}</h4>
                                         </div>
-                                    </div>
-
+                                        <div className='mocie-button-container'>
+                                        <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>
+                                            <div className="play-button-icon-container">
+                                                <FontAwesomeIcon className="play-button-icon"
+                                                    icon = {faCirclePlay}
+                                                />
+                                            </div>
+                                        </Link>
+                                        </div>
                                 </div>
                             </div>
-                        </Paper>
+                        </div>
+                    </Paper>
                     )
                 })
             }
