@@ -1,9 +1,9 @@
-import axios from 'axios';
 import './App.css';
 import api from './api/axiosConfig';
 import {useState, useEffect} from 'react';
-import Layout from './component/Layout';
+import Layout from './components/Layout';
 import { Routes, Route} from 'react-router-dom';
+import Home from './components/home/Home';
 
 function App() {
 
@@ -17,9 +17,7 @@ function App() {
       const response = await api.get("/api/v1/movies");
       // console.log(response.data);
       setMovies(response.data);
-
-      console.log(response.data);
-
+ 
     } 
     catch(err)
     {
@@ -35,7 +33,14 @@ function App() {
 
   return (
     <div className="App">
-      <Routes></Routes>
+     
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Home/>}></Route>
+
+          </Route>
+      </Routes>
+      
     </div>
   );
 }
